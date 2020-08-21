@@ -38,7 +38,6 @@
 
 
 <script>
-import axios from 'axios'
 export default {
   data() {
     return {
@@ -49,7 +48,7 @@ export default {
   },
   methods: {
     login() {
-        axios.post(' http://127.0.0.1:8000/api/users/login/', {
+        this.$http.post('users/login/', {
 	                "username": this.username,
 	                "password": this.password
                 })

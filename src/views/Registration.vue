@@ -74,7 +74,7 @@ export default {
         })
         .then((response) => {
           console.log('response',response);
-          this.$router.push({ name: 'dashboard' })
+          this.$router.push({ name: 'UserProf' })
         })
         .catch(err => {
           this.error = err.response.data.error

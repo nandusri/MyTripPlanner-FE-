@@ -53,8 +53,9 @@ export default {
 	                "password": this.password
                 })
         .then((response) => {
-          console.log('response',response);
-          this.$router.push({ name: 'dashboard' })
+          localStorage.setItem('token', response.data.token);
+          localStorage.setItem('user', JSON.stringify(response.data.user));
+          this.$router.push({ name: 'UserProf' })
         })
         .catch(err => {
           this.error = err.response.data.error

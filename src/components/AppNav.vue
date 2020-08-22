@@ -1,19 +1,29 @@
 <template>
   <div id="nav">
     <router-link v-if="loggedIn" to="/">Dashboard</router-link>
+    <router-link v-if="loggedIn" to="/">Trips</router-link>
+    <router-link v-if="loggedIn" to="/user-profile">Profile</router-link>
     <router-link v-if="!loggedIn" to="/login" class="button btn-secondary">Login</router-link>
     <button v-else type="button" class="button btn-secondary" @click="logout">Logout</button>
   </div>
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
 export default {
   computed: {
-    ...mapGetters(['loggedIn'])
+    loggedIn: function () {
+      var token = localStorage.getItem('token');
+      if(token){
+        return true
+      }
+      else{
+        return false
+      }
+    }
   },
   methods: {
     logout() {
+      localStorage.removeItem('token');
       this.$store.dispatch('logout')
     }
   }

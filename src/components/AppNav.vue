@@ -26,6 +26,7 @@ export default {
       this.$http.post('users/logout/')
       .then(() => {
           localStorage.clear();
+          this.$router.push({ name: 'Login' })
         })
       .catch(err => {
         this.error = err.response.data.error

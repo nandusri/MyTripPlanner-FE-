@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+    <router-link  to="/add-trip" class="button btn-secondary">Add Trip</router-link>
     <div class="columns">
         <div v-for="trip in TripDetails" :key="trip.name" class="column">
             <div style="margin-bottom:20px" class="card">

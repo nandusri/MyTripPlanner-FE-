@@ -5,6 +5,7 @@ import Registration from "../views/Registration.vue";
 import UserProf from "../views/UserProfileView.vue";
 import Trips from "../views/Trips.vue";
 import Dashboard from "../views/Dashboard.vue";
+import AddTrip from "../views/AddTrip.vue";
 
 Vue.use(VueRouter);
 
@@ -47,6 +48,11 @@ const routes = [
     path: "/dashboard",
     name: "Dashboard",
     component: Dashboard
+  },
+  {
+    path: "/add-trip",
+    name: "AddTrip",
+    component: AddTrip
   },
 ];
 

@@ -1,7 +1,7 @@
 <template>
   <div id="nav">
-    <router-link v-if="loggedIn" to="/">Dashboard</router-link>
-    <router-link v-if="loggedIn" to="/">Trips</router-link>
+    <router-link v-if="loggedIn" to="/dashboard">Dashboard</router-link>
+    <router-link v-if="loggedIn" to="/trips">Trips</router-link>
     <router-link v-if="loggedIn" to="/user-profile">Profile</router-link>
     <router-link v-if="!loggedIn" to="/login" class="button btn-secondary">Login</router-link>
     <button v-else type="button" class="button btn-secondary" @click="logout">Logout</button>
@@ -23,8 +23,13 @@ export default {
   },
   methods: {
     logout() {
-      localStorage.removeItem('token');
-      this.$store.dispatch('logout')
+      this.$http.post('users/logout/')
+      .then(() => {
+          localStorage.clear();
+        })
+      .catch(err => {
+        this.error = err.response.data.error
+      })
     }
   }
 }

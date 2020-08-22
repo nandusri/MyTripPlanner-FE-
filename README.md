@@ -1,24 +1,20 @@
-# frontend
+# MyyTripPlanner
 
-## Project setup
-```
-npm install
-```
+Simple trip Planning application using **Vue**.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## Setup
 
-### Compiles and minifies for production
+#### Requirements
+ * Node
+ * NPM
+#### Package Installation
+Go to the project folder(using console using ***cd*** command) where ***package.json*** lives and execute the following command
 ```
-npm run build
+  npm install
 ```
 
-### Lints and fixes files
+#### Start the app
 ```
-npm run lint
+  npm run serve
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+The application will start automatically in your browser on `http://localhost:8080
